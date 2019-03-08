@@ -1,0 +1,8 @@
+.vim/bundle/*
+.vim/backup/*
+.vim/dein/*
+.vim/.netrwhist
+
+.*.un~
+*netrwhist
+.DS_Store

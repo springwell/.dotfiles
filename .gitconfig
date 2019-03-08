@@ -1,0 +1,37 @@
+[include]
+    path = ~/.gitconfig.local
+
+[core]
+    editor = vim
+
+[color]
+    status = auto
+    diff = auto
+    branch = auto
+    interactive = auto
+
+[alias]
+
+    st = status
+    stat = status
+    rb = rebase
+    rbm = rebase master
+
+    com = commit
+    coma = commit --amend
+
+    ch = checkout
+    chb = checkout -b
+
+    gra = log --all --graph --branches
+    graph = log --all --graph --branches
+    #log-graph = --oneline --decorate --graph --branches --tags --remotes
+    
+    br = branch
+    brr = branch -r
+    bra = branch -a
+
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true

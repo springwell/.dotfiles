@@ -1,0 +1,24 @@
+set transparency=5
+set noimdisable
+"set noimdisableactivate
+
+"remove toolbar
+set guioptions-=T
+"do not show right-scrollbar
+set guioptions-=r
+set guioptions-=R
+"do not show left-scrollbar
+set guioptions-=l
+set guioptions-=L
+
+"set commandline height to 1
+set cmdheight=1
+
+"set fullscreen
+set lines=30
+set columns=104
+
+"fonts
+set guifont=Ricty\ Diminished\ Discord:h16
+"set guifont=Ricty_for_Powerline:h17
+"set guifontwide=Ricty:h17

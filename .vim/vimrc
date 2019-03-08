@@ -1,0 +1,289 @@
+if &compatible
+    set nocompatible
+endif
+
+" +------------------------------------------------------------+
+"  Dein.vim Settings
+" +------------------------------------------------------------+
+let s:dein_path = expand('~/.vim/dein')
+let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
+
+" install dein.vim if not exists
+if !isdirectory(s:dein_repo_path)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_path
+endif
+
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+if dein#load_state(expand('~/.vim/dein/'))
+    call dein#begin(expand('~/.vim/dein/'))
+
+    " load colorscheme list
+    call dein#load_toml(expand('~/.vim/colorscheme.toml'))
+
+    " load plugin list
+    call dein#load_toml(expand('~/.vim/dein.toml'))
+
+    " load plugin list with lazyload
+    call dein#load_toml(expand('~/.vim/dein_lazy.toml'), {'lazy': 1})
+
+    call dein#end()
+endif
+
+" Check for non-installed plugins and install
+" call dein#check_install()
+
+" Install it if not exists
+" if dein#check_install()
+"    call dein#install()
+" endif
+
+filetype plugin on
+filetype indent on
+
+
+" +------------------------------------------------------------+
+"  Vim Configuration
+" +------------------------------------------------------------+
+
+" enable syntax
+syntax on
+
+" enable 256 colors
+set t_Co=256
+
+" colorscheme
+colorscheme gruvbox
+set background=dark
+
+" set gui options
+set guioptions-=e
+
+" show number
+set number
+
+" show ruler
+set ruler
+
+" show parentheses match
+set showmatch
+
+" make backup files in ~/.vimbackup
+"set backupdir=~/.vimbackup
+
+" do not make swapfile
+set noswapfile
+" disable undofile
+set noundofile
+
+" wrap when extends
+set wrap
+
+" do not wrap when extends
+"set nowrap
+
+"set shell to /bin/zsh
+set shell=$SHELL
+
+" encoding
+set encoding=utf-8
+scriptencoding utf-8
+
+" show arrows when extends
+"set list
+"set listchars=tab:\ \ ,trail:\ \,eol:↵,extends:»,precedes:«,nbsp:%
+"set listchars=tab:¦-,trail:-,eol:↵,extends:»,precedes:«,nbsp:%
+"set listchars=tab:¦-,trail:-,eol:↵,extends:»,precedes:«,nbsp:%
+"set listchars=tab:¦\ \,trail:_
+"set listchars=eol:↵,extends:»,precedes:«,nbsp:%
+
+" split settings
+set splitright
+set splitbelow
+
+" reload when file changed
+set autoread
+
+
+" file-encodings
+set fileencodings=utf-8,cp932,euc-jp,default,latin,ucs-bom,iso-2022-jp
+
+" nocompatible with vi
+set nocompatible
+
+" sound-off
+set visualbell t_vb=
+
+" do not show splash
+set shortmess+=I
+
+" always show statusline
+set laststatus=2
+
+" status-line
+"set statusline=%F%m%r%h%w\%=[Type=%Y]\[Format=%{&ff}]\[Enc=%{&fileencoding}]\[%l/%L=%p]
+set statusline=%y%<%F%m%r%h%w%=\[%l/%L]\[%{&ff}]\[%{&fileencoding}]
+
+" indent and tab settings
+set autoindent
+set smartindent
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+set expandtab
+set smarttab
+
+
+" do not wrap
+set textwidth=0
+set formatoptions=q
+
+" search settings
+set incsearch
+
+" highlight search results
+set hlsearch
+
+" show cursorline
+set cursorline
+"set cursorcolumn
+
+" spellcheck
+"set spell
+
+" backspace settings
+set backspace=indent,eol,start
+
+" set taglist
+set tags=./tags
+
+" always show tabline
+set showtabline=2
+
+" set tab title length
+set guitablabel=%-0.12t%M
+
+" ignore case
+set infercase
+
+" complement on cmdline
+set wildmenu
+
+" disable preview-window on prediction
+set completeopt-=preview
+
+" +------------------------------------------------------------+
+"  KeyBindings
+" +------------------------------------------------------------+
+
+" define ctrl-c to esc
+map ¥ <leader>
+
+noremap <C-c> <Esc>
+noremap! <C-c> <Esc>
+
+nmap <C-w>w :write<CR>
+vmap <C-w>w <Esc>:write<CR>
+omap <C-w>w :write<CR>
+imap <C-w>w <Esc>:write<CR>
+
+nmap <C-w><C-w> :write<CR>
+vmap <C-w><C-w> <Esc>:write<CR>
+omap <C-w><C-w> :write<CR>
+imap <C-w><C-w> <Esc>:write<CR>
+
+nmap <silent> <leader>M      :silent make<CR>
+vmap <silent> <leader>M <Esc>:silent make<CR>
+omap <silent> <leader>M      :silent make<CR>
+imap <silent> <leader>M <Esc>:silent make<CR>
+
+nmap <silent> <leader>m       :!make > /dev/null 2>&1 &<CR>
+vmap <silent> <leader>m <Esc> :!make > /dev/null 2>&1 &<CR>
+omap <silent> <leader>m       :!make > /dev/null 2>&1 &<CR>
+imap <silent> <leader>m <Esc> :!make > /dev/null 2>&1 &<CR>
+
+" move cursor left when parentheses defined (in command-mode)
+cnoremap {} {}<Left>
+cnoremap [] []<Left>
+cnoremap () ()<Left>
+cnoremap '' ''<Left>
+cnoremap '' ''<Left>
+cnoremap <> <><Left>
+
+" emacs-like cursor control
+noremap! <C-a>  <Home>
+noremap! <C-e>  <End>
+noremap! <C-b>  <Left>
+noremap! <C-f>  <Right>
+"noremap! <C-n>  <Down>
+"noremap! <C-p>  <UP>
+noremap! <C-h>  <BS>
+noremap! <C-d>  <Del>
+
+noremap <C-a>  <Home>
+noremap <C-e>  <End>
+noremap <C-b>  <Left>
+noremap <C-f>  <Right>
+noremap <C-n>  <Down>
+noremap <C-p>  <UP>
+"noremap <C-h>  X
+noremap <C-d>  x
+
+
+" use + key to increment - key to decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+" +------------------------------------------------------------+
+"  Pane and Tab Settings
+" +------------------------------------------------------------+
+nnoremap <silent><C-w><C-j> :resize+6<CR>
+nnoremap <silent><C-w><C-k> :resize-6<CR>
+nnoremap <silent><C-w><C-l> :vertical resize+6<CR>
+nnoremap <silent><C-w><C-h> :vertical resize-6<CR>
+nnoremap <silent><C-w>1 :tabonly<CR>
+nnoremap <silent><C-w>2 :vertical split<CR>
+nnoremap <silent><C-w>3 :split<CR>
+nnoremap <silent><C-w>4 :tabedit<CR>
+nnoremap <silent><C-w>[ <C-w>r<CR>
+nnoremap <silent><C-w>] <C-w>r<CR>
+nnoremap <silent><C-w>0 :quit<CR>
+nnoremap <silent><C-w><Tab> :tabnext<CR>
+nnoremap <silent><C-w>n :tabnext<CR>
+nnoremap <silent><C-w>p :tabprev<CR>
+"nnoremap <C-Tab> :tabnext<CR>
+"nnoremap <silent><C-W><Tab><Tab> :tabprev<CR>
+"nnoremap <C-W> :tabNext<CR>
+
+
+" +------------------------------------------------------------+
+"  Command Alias
+" +------------------------------------------------------------+
+
+command! Vimrc edit ~/.vim/vimrc
+command! Dein edit ~/.vim/dein.toml
+command! Deinlazy edit ~/.vim/dein_lazy.toml
+command! Colorscheme edit ~/.vim/colorscheme.toml
+command! Zshrc edit ~/.zshrc
+command! Zshenv edit ~/.zshenv
+command! Tmux edit ~/.tmux.conf
+command! Emacs edit ~/.emacs.d/init.el
+command! Sshconf edit ~/.ssh/config
+
+" +------------------------------------------------------------+
+"  Filetype Detection
+" +------------------------------------------------------------+
+
+augroup FileTypeDetect
+    autocmd!
+    autocmd BufNewFile,BufRead *.coffee setfiletype coffee
+    autocmd BufNewFile,BufRead *.tex setfiletype tex
+    autocmd BufNewFile,BufRead *.yml setfiletype yaml
+    autocmd BufNewFile,BufRead *.yaml setfiletype yaml
+    autocmd BufNewFile,BufRead *.js setfiletype javascript
+    autocmd BufNewFile,BufRead *.py setfiletype python
+    autocmd BufNewFile,BufRead *.go setfiletype go
+    autocmd BufNewFile,BufRead *.md setfiletype markdown
+    autocmd BufNewFile,BufRead *.txt setfiletype text
+augroup END
