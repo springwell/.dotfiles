@@ -20,6 +20,10 @@ cat bashrc.append >> $HOME/.bashrc
 # install pyenv
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+
+export PYENV_ROOT="\$HOME/.pyenv"
+export PATH="\$PYENV_ROOT/bin:\$PATH"
+
 cat << END >>  $HOME/.bashrc
 export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$PATH"
