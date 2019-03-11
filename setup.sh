@@ -14,16 +14,18 @@ ln -s $HOME/.dotfiles/.vim/vimrc $HOME/.config/nvim/init.vim;
 #echo "SHELL=/bin/zsh" >> $HOME/.bashrc
 #ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
+# add bashrc configuration
+cat bashrc.append >> $HOME/.bashrc
+
 # install pyenv
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
 cat << END >>  $HOME/.bashrc
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="\$HOME/.pyenv"
+export PATH="\$PYENV_ROOT/bin:\$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-eval "$(pyenv virtualenv-init -)"
-eval "$(pyenv init -)"
-alias vim=nvim
+eval "\$(pyenv virtualenv-init -)"
+eval "\$(pyenv init -)"
 END
 
 eval "$(pyenv init -)"
