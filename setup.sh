@@ -10,7 +10,7 @@ mkdir -p $HOME/.config/nvim/;
 ln -s $HOME/.dotfiles/.vim/vimrc $HOME/.config/nvim/init.vim;
 
 # move exiting .gitconfig file to .gitconfig.local
-if [ -f $HOME/.gitconfig ]; then
+if [[ -f $HOME/.gitconfig &&  ! -L $HOME/.gitconfig ]]; then
     mv $HOME/.gitconfig $HOME/.gitconfig.local
 fi
 ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
