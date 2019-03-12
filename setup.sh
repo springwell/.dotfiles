@@ -9,6 +9,12 @@ ln -s $HOME/.dotfiles/.vim $HOME/.vim;
 mkdir -p $HOME/.config/nvim/;
 ln -s $HOME/.dotfiles/.vim/vimrc $HOME/.config/nvim/init.vim;
 
+# move exiting .gitconfig file to .gitconfig.local
+if [ -f $HOME/.gitconfig ]; then
+    mv $HOME/.gitconfig $HOME/.gitconfig.local
+fi
+ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
+
 # set zsh for default shell
 #echo "(which zsh 1>/dev/null 2>&1 && zsh || ~/local/bin/zsh) && exit" >> $HOME/.bashrc
 #echo "SHELL=/bin/zsh" >> $HOME/.bashrc
