@@ -17,6 +17,8 @@
     l = log --graph --all
     f = fetch
     m = merge
+    pl = pull
+    ph = push
     
     # add
     a = add
@@ -28,7 +30,7 @@
     
     # commit
     com = commit -m
-    coma = commit --amend
+    coma = commit -v --amend
     
     # checkout
     ch = checkout

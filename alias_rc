@@ -60,6 +60,8 @@ alias gs="git status"
 alias gl="git log --graph --all"
 alias gf="git fetch"
 alias gm="git merge"
+alias gpl="git pull"
+alias gph="git push"
 
 # add 
 alias ga="git add"
@@ -71,7 +73,7 @@ alias gbrd='git branch -d'
 
 # commit
 alias gcom='git commit -m'
-alias gcoma='git commit --amend'
+alias gcoma='git commit -v --amend'
 
 # checkout
 alias gch="git checkout"
