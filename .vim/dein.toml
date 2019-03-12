@@ -436,6 +436,10 @@ repo = 'Shougo/vimfiler'
 [[plugins]]
 repo = 'thinca/vim-ref'
 
+# ctags
+[[plugins]]
+repo = 'szw/vim-tags'
+
 # search count
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
