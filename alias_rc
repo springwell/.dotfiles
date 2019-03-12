@@ -81,6 +81,7 @@ alias gchm="git checkout master"
 # rebase
 alias grb="git rebase"
 alias grbi="git rebase -i"
+alias grbm="git rebase master"
 
 # reset
 alias grs="git reset"

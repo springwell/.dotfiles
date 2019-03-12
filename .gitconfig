@@ -2,7 +2,7 @@
     path = ~/.gitconfig.local
 
 [core]
-    editor = vim
+    editor = nvim
 
 [color]
     status = auto
@@ -11,27 +11,34 @@
     interactive = auto
 
 [alias]
-
-    st = status
-    stat = status
-    rb = rebase
-    rbm = rebase master
-
-    com = commit
+    # common
+    d = diff
+    s = status
+    l = log --graph --all
+    f = fetch
+    m = merge
+    
+    # add
+    a = add
+    ap = add -p
+    
+    # branch
+    br = branch -a
+    brd = brandh -a
+    
+    # commit
+    com = commit -m
     coma = commit --amend
-
+    
+    # checkout
     ch = checkout
     chb = checkout -b
-
-    gra = log --all --graph --branches
-    graph = log --all --graph --branches
-    #log-graph = --oneline --decorate --graph --branches --tags --remotes
+    chm = checkout master
     
-    br = branch
-    brr = branch -r
-    bra = branch -a
+    # rebase 
+    rb = git rebase
+    rbi = git rebase -i
+    rbm = git rebase master
 
-[filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+    # reset
+    rs = git reset
