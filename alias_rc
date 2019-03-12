@@ -14,40 +14,81 @@ alias t="tree"
 alias v="vim"
 
 # alias to applications
+
+# vim
 alias v="vim"
 alias nv="nvim"
 
+# ssh
 alias s="ssh"
 alias st="ssh -t 'tmux a -d'"
 alias ss="ssh -t 'screen -r'"
 
+# ping
 alias p="ping"
 alias p8="ping 8.8.8.8"
 
+# traceroute
 alias tr="traceroute"
 alias tr8="traceroute 8.8.8.8"
 
 
 # config alias
+
+# vim
 alias vimrc="$EDITOR ~/.vim/vimrc"
 alias gvimrc="$EDITOR ~/.vim/gvimrc"
 alias nvimrc="$EDITOR ~/.config/nvim/init.vim"
+
+# tmux
 alias tmuxconf="$EDITOR ~/.tmux.conf"
+
+# common alias for bash/zsh
+alias alias_rc="$EDITOR $HOME/.dotfiles/alias_rc && source $HOME/.dotfiles/alias_rc"
+
+# bash
+alias bashrc="$EDITOR ~/.bashrc && source ~/.bashrc"
+alias bash_profile="$EDITOR ~/.bash_profile && source ~/.bash_profile"
+
+# zsh
 alias zshrc="$EDITOR ~/.zshrc && source ~/.zshrc && zcompile ~/.zshrc"
 alias zshenv="$EDITOR ~/.zshenv && source ~/.zshenv && zcompile ~/.zshenv"
 alias zprofile="$EDITOR ~/.zprofile && source ~/.zprofile && zcompile ~/.zprofile"
+
+# application
 alias sshconf="$EDITOR ~/.ssh/config"
 alias gitconf="$EDITOR ~/.gitconfig"
 
 # git alias
+
+# common
 alias g="git"
-alias ga="git add"
+alias gd="git diff"
 alias gs="git status"
+alias gl="git log --graph --all"
+alias gf="git fetch"
+alias gm="git merge"
+
+# add 
+alias ga="git add"
+alias gap="git add -p"
+
+# branch
 alias gbr="git branch -a"
 alias gbrd='git branch -d'
+
+# commit
 alias gcom='git commit -m'
 alias gcoma='git commit --amend'
+
+# checkout
 alias gch="git checkout"
 alias gchb="git checkout -b"
-alias gd="git diff"
-alias glog="git log --graph --all"
+alias gchm="git checkout master"
+
+# rebase
+alias grb="git rebase"
+alias grbi="git rebase -i"
+
+# reset
+alias grs="git reset"
