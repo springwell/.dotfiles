@@ -15,16 +15,16 @@ ln -s $HOME/.dotfiles/.vim/vimrc $HOME/.config/nvim/init.vim;
 #ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # add bashrc configuration
-cat bashrc.append >> $HOME/.bashrc
+cat bashrc.append >> $HOME/.bashrc;
 
 # install pyenv
-git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
+git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv;
+git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv;
 
-export PYENV_ROOT="\$HOME/.pyenv"
-export PATH="\$PYENV_ROOT/bin:\$PATH"
+export PYENV_ROOT="$HOME/.pyenv";
+export PATH="$PYENV_ROOT/bin:$PATH";
 
-cat << END >>  $HOME/.bashrc
+cat << END >> $HOME/.bashrc
 export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -32,8 +32,8 @@ eval "\$(pyenv virtualenv-init -)"
 eval "\$(pyenv init -)"
 END
 
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+eval "$(pyenv init -)";
+eval "$(pyenv virtualenv-init -)";
 
 
 # create virtualenv for neovim
@@ -46,4 +46,4 @@ do
     pip install neovim;
 done;
 
-pyenv local neovim2 neovim3
+pyenv local neovim2 neovim3;
