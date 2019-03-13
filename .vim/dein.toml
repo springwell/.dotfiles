@@ -439,6 +439,9 @@ repo = 'thinca/vim-ref'
 # ctags
 [[plugins]]
 repo = 'szw/vim-tags'
+hook_add = '''
+let g:vim_tags_auto_generate = 1
+'''
 
 # search count
 [[plugins]]
