@@ -61,7 +61,7 @@ alias gl="git log --graph --all"
 alias gf="git fetch"
 alias gm="git merge"
 alias gpl="git pull"
-alias gph="git push"
+alias gps="git push"
 
 # add 
 alias ga="git add"

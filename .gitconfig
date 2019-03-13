@@ -18,7 +18,7 @@
     f = fetch
     m = merge
     pl = pull
-    ph = push
+    ps = push
     
     # add
     a = add
