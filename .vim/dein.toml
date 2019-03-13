@@ -418,7 +418,7 @@ let g:NERDTreeDirArrows = 0
 let g:NERDTreeShowBookmarks = 1
 "auto cd
 let g:NERDTreeChDirMode=2
-let g:NERDTreeWinPos = 'right'
+let g:NERDTreeWinPos = 'left'
 "let g:NERDTreeWinSize=25
 
 " open NERDTREE when <leader>l has been pressed
