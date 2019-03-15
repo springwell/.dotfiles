@@ -20,8 +20,8 @@ ln -s $HOME/.dotfiles/.gitconfig $HOME/.gitconfig
 #echo "SHELL=/bin/zsh" >> $HOME/.bashrc
 #ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
-# add bashrc configuration
-cat bashrc.append >> $HOME/.bashrc;
+# import bashrc to import bashrc.append
+echo "source $HOME/.dotfiles/bashrc.append" >> $HOME/.bashrc;
 
 # install pyenv
 git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv;
