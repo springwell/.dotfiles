@@ -1,46 +1,46 @@
 [include]
-    path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 
 [core]
-    editor = nvim
+	editor = nvim
 
 [color]
-    status = auto
-    diff = auto
-    branch = auto
-    interactive = auto
+	status = auto
+	diff = auto
+	branch = auto
+	interactive = auto
 
 [alias]
-    # common
-    d = diff
-    s = status
-    l = log --graph --all
-    f = fetch
-    m = merge
-    pl = pull
-    ps = push
-    
-    # add
-    a = add
-    ap = add -p
-    
-    # branch
-    br = branch -a
-    brd = brandh -a
-    
-    # commit
-    com = commit -m
-    coma = commit -v --amend
-    
-    # checkout
-    ch = checkout
-    chb = checkout -b
-    chm = checkout master
-    
-    # rebase 
-    rb = git rebase
-    rbi = git rebase -i
-    rbm = git rebase master
+	# common
+	d = diff
+	s = status
+	l = log --graph --all
+	f = fetch
+	m = merge
+	pl = pull
+	ps = push
+	
+	# add
+	a = add
+	ap = add -p
+	
+	# branch
+	br = branch -a
+	brd = brandh -a
+	
+	# commit
+	com = commit -m
+	coma = commit -v --amend
+	
+	# checkout
+	ch = checkout
+	chb = checkout -b
+	chm = checkout master
+	
+	# rebase 
+	rb = git rebase
+	rbi = git rebase -i
+	rbm = git rebase master
 
-    # reset
-    rs = git reset
+	# reset
+	rs = git reset
