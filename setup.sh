@@ -50,6 +50,6 @@ do
     pyenv virtualenv $PYTHON_PACKAGE_NAME neovim$PYTHON_VERSION;
     pyenv activate neovim$PYTHON_VERSION;
     pip install neovim flake8;
+    pyenv deactivate;
 done;
 
-pyenv local neovim2 neovim3;
