@@ -30,7 +30,7 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git $HOME/.pyenv/plugins/pye
 export PYENV_ROOT="$HOME/.pyenv";
 export PATH="$PYENV_ROOT/bin:$PATH";
 
-cat << END >> $HOME/.bashrc
+cat << END >> $HOME/.bash_profile
 export PYENV_ROOT="\$HOME/.pyenv"
 export PATH="\$PYENV_ROOT/bin:\$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
