@@ -237,6 +237,10 @@ noremap <C-d>  x
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" use z+ to increase foldcolumn
+nnoremap z- :set foldlevel-=1<CR>
+nnoremap z+ :set foldlevel+=1<CR>
+
 " +------------------------------------------------------------+
 "  Pane and Tab Settings
 " +------------------------------------------------------------+
