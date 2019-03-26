@@ -134,6 +134,8 @@ set shiftwidth=4
 set expandtab
 set smarttab
 
+" fold
+set foldmethod=indent
 
 " do not wrap
 set textwidth=0
