@@ -194,13 +194,13 @@ endif
 let g:neocomplcache_enable_at_startup = 1
 
 " list limitation
-let g:neocomplcache_max_list = 30
+let g:neocomplcache_max_list = 80
 
-" start completion at 3 letters
-let g:neocomplcache_auto_completion_start_length = 1
+" start auto-completion on 2 letters
+let g:neocomplcache_auto_completion_start_length = 2
 
-" completion word length in buffer
-let g:neocomplcache_manual_completion_start_length = 4
+" start manual-completion on 3 letters
+let g:neocomplcache_manual_completion_start_length = 3
 
 " use smart case completion with underbar
 let g:neocomplcache_enable_smart_case = 1
@@ -239,13 +239,13 @@ endif
 " enable at startup
 let g:neocomplete#enable_at_startup = 1 
 " list limitation
-let g:neocomplete#max_list = 30
+let g:neocomplete#max_list = 80
 
-" start completion at 3 letters
-let g:neocomplete#auto_completion_start_length = 1
+" start auto-completion on 2 letters
+let g:neocomplete#auto_completion_start_length = 2
 
-" completion word length in buffer
-let g:neocomplete#manual_completion_start_length = 4
+" start manual-completion on 3 letters
+let g:neocomplete#manual_completion_start_length = 3
 
 " use smart case completion with underbar
 let g:neocomplete#enable_smart_case = 1
@@ -289,12 +289,12 @@ endif
 " enable at startup
 let g:deoplete#enable_at_startup = 1 
 " list limitation
-let g:deoplete#max_list = 30
+let g:deoplete#max_list = 80
 
-" start completion at 3 letters
-let g:deoplete#auto_completion_start_length = 1
+" start auto-completion on 2 letters
+let g:deoplete#auto_completion_start_length = 2
 
-" completion word length in buffer
+" start manual-completion on 3 letters
 let g:deoplete#manual_completion_start_length = 3
 
 " use smart case completion with underbar
