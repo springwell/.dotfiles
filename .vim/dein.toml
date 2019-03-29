@@ -215,10 +215,6 @@ let g:neocomplcache_keyword_patterns = {}
 " disable japanese completion
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
-" omni completion
-let neocomplcache_force_omni_patterns = {}
-"let neocomplcache_force_omni_patterns['go'] = '\h\w*\.\?'
-let neocomplcache_force_omni_patterns['python'] = '[^. \t]\.\w*'
 
 " select prediction on ctrl-n and ctrl-p
 
@@ -263,11 +259,6 @@ let g:neocomplete#keyword_patterns = {}
 
 " disable japanese completion
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" omni completion
-let neocomplete#force_omni_patterns = {}
-"let neocomplete#force_omni_patterns['go'] = '\h\w*\.\?'
-let neocomplete#force_omni_patterns['python'] = '[^. \t]\.\w*'
 
 " select prediction on ctrl-n and ctrl-p
 
@@ -318,11 +309,6 @@ let g:deoplete#keyword_patterns = {}
 
 " disable japanese completion
 let g:deoplete#keyword_patterns['default'] = '\h\w*'
-
-" omni completion
-let deoplete#force_omni_patterns = {}
-"let deoplete#force_omni_patterns['go'] = '\h\w*\.\?'
-let deoplete#force_omni_patterns['python'] = '[^. \t]\.\w*'
 
 " select prediction on ctrl-n and ctrl-p
 
