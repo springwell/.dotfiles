@@ -8,6 +8,9 @@ build = 'make'
 on_if = 'executable("make")'
 
 [[plugins]]
+repo = 'neomake/neomake'
+
+[[plugins]]
 repo = 'Shougo/unite.vim'
 depends = ['vimproc.vim']
 on_if = '!has("nvim")'
