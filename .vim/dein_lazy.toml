@@ -1,3 +1,4 @@
+# python
 [[plugins]]
 repo = 'davidhalter/jedi'
 on_ft = ['python']
@@ -6,8 +7,14 @@ let g:jedi#completions_enabled = 0
 '''
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+repo = 'deoplete-plugins/deoplete-jedi'
 on_ft = ['python']
+
+# golang
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-go'
+build = 'make'
+on_ft = ['go']
 
 # markdown
 [[plugins]]
