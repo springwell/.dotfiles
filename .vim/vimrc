@@ -157,9 +157,6 @@ set cursorline
 " backspace settings
 set backspace=indent,eol,start
 
-" set taglist
-set tags=./tags
-
 " always show tabline
 set showtabline=2
 
