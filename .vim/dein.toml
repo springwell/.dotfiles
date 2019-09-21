@@ -11,11 +11,6 @@ on_if = 'executable("make")'
 repo = 'neomake/neomake'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = ['vimproc.vim']
-on_if = '!has("nvim")'
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 on_if = 'has("nvim")'
 
@@ -25,29 +20,11 @@ repo = 'thinca/vim-quickrun'
 hook_add = '''
 let g:quickrun_config = {}
 
-" move cursor to quickrun-result
-let g:quickrun_config['_'] = {
-    \ 'runner' : 'vimproc',
-    \ 'runner/vimproc/updatetime' : 40,
-    \ 'outputter/buffer/into' : 1,
-\ }
-
 "let g:quickrun_config['_'] = {
 "    \ 'runner' : 'vimproc',
 "    \ 'runner/vimproc/updatetime' : 40,
 "    \ 'outputter/buffer/into' : 1,
 "\ }
-
-
-" auto-compile tex and preview it in pdf
-let g:quickrun_config['tex'] = {
-    \ 'command' : 'uplatex',
-        \ 'exec': [
-            \ '%c -output-directory %s:h %s', 
-            \ 'dvipdfmx -o %s:r.pdf %s:r.dvi', 
-            \ 'open %s:r.pdf'
-        \ ]
-\ }
 
 " preview html in browser
 let g:quickrun_config['html'] = {
@@ -168,15 +145,6 @@ endfunction
 function! LlFugitive()
     return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
-
-"function! MyFilename()
-"    return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-"        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-"        \  &ft == 'unite' ? unite#get_status_string() :
-"        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-"        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-"        \ ('' != MyModified() ? ' ' . MyModified() : '')
-"endfunction
 '''
 
 [[plugins]]
@@ -185,143 +153,28 @@ depends = ['lightline.vim']
 
 # complement
 [[plugins]]
-repo = 'Shougo/neocomplcache'
-on_if = '!has("nvim")&&!has("lua")'
-hook_add = '''
-if has('conceal')
-    set conceallevel=2
-    set concealcursor=i
-endif
-
-" enable at startup
-let g:neocomplcache_enable_at_startup = 1
-
-" list limitation
-let g:neocomplcache_max_list = 80
-
-" start auto-completion on 2 letters
-let g:neocomplcache_auto_completion_start_length = 2
-
-" start manual-completion on 3 letters
-let g:neocomplcache_manual_completion_start_length = 3
-
-" use smart case completion with underbar
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1 
-let g:neocomplcache_enable_underbar_completion = 1
-
-" im settings
-let g:neocomplcache_lock_iminsert = 1
-
-let g:neocomplcache_keyword_patterns = {}
-
-" disable japanese completion
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
-
-" select prediction on ctrl-n and ctrl-p
-
-"inoremap <expr><TAB> pumvisible() ? 
-"    \   '\<Down>'
-"    \   :'\<TAB>'
-
-"inoremap <expr><C-Tab> pumvisible() ? 
-"    \   '\<Up>'
-"    \   :'\<C-Tab>'
-'''
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-on_if = '!has("nvim")&&has("lua")'
-hook_add = '''
-if has('conceal')
-    set conceallevel=2
-    set concealcursor=i
-endif
-
-" enable at startup
-let g:neocomplete#enable_at_startup = 1 
-" list limitation
-let g:neocomplete#max_list = 80
-
-" start auto-completion on 2 letters
-let g:neocomplete#auto_completion_start_length = 2
-
-" start manual-completion on 3 letters
-let g:neocomplete#manual_completion_start_length = 3
-
-" use smart case completion with underbar
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_camel_case_completion = 1 
-let g:neocomplete#enable_underbar_completion = 1
-
-" im settings
-let g:neocomplete#lock_iminsert = 1
-
-let g:neocomplete#keyword_patterns = {}
-
-" disable japanese completion
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" select prediction on ctrl-n and ctrl-p
-
-"inoremap <expr><TAB> pumvisible() ? 
-"    \   '\<Down>'
-"    \   :'\<TAB>'
-
-"inoremap <expr><C-Tab> pumvisible() ? 
-"    \   '\<Up>'
-"    \   :'\<C-Tab>'
-'''
-
-[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 on_if = 'has("nvim")&&has("python3")'
 hook_add = '''
 " use neovim virutualenv when exists
 " use default python when not
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
 let g:python_host_prog=system('echo -n $(ls $HOME/.pyenv/versions/neovim2/bin/python || which python2)')
 let g:python3_host_prog=system('echo -n $(ls $HOME/.pyenv/versions/neovim3/bin/python || which python3)')
 
-
-if has('conceal')
-    set conceallevel=2
-    set concealcursor=i
-endif
-
 " enable at startup
 let g:deoplete#enable_at_startup = 1 
-" list limitation
-let g:deoplete#max_list = 80
 
-" start auto-completion on 2 letters
-let g:deoplete#auto_completion_start_length = 2
-
-" start manual-completion on 3 letters
-let g:deoplete#manual_completion_start_length = 3
-
-" use smart case completion with underbar
+" use smart case completion
 let g:deoplete#enable_smart_case = 1
 let g:deoplete#enable_camel_case_completion = 1 
 let g:deoplete#enable_underbar_completion = 1
 
 " im settings
 let g:deoplete#lock_iminsert = 1
-
-let g:deoplete#keyword_patterns = {}
-
-" disable japanese completion
-let g:deoplete#keyword_patterns['default'] = '\h\w*'
-
-" select prediction on ctrl-n and ctrl-p
-
-"inoremap <expr><TAB> pumvisible() ? 
-"    \   '\<Down>'
-"    \   :'\<TAB>'
-
-"inoremap <expr><C-Tab> pumvisible() ? 
-"    \   '\<Up>'
-"    \   :'\<C-Tab>'
 '''
 
 # snippets 
@@ -331,16 +184,6 @@ hook_add = '''
 " expand snippts when Ctrl-k has been pressed
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" select prediction using tab-key
-imap <expr><TAB> neosnippet#jumpable() ? 
-    \   '<Plug>(neosnippet_expand_or_jump)'
-    \   : pumvisible() ? '<C-n>' : '<TAB>'
-
-smap <expr><TAB> neosnippet#jumpable() ?
-    \   '<Plug>(neosnippet_expand_or_jump)'
-    \   : '<TAB>'
-
 '''
 
 [[plugins]]
@@ -390,8 +233,8 @@ let g:indent_guides_start_level = 1
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-#[[plugins]]
-#repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
 
 # web-api
 [[plugins]]
