@@ -184,6 +184,14 @@ hook_add = '''
 " expand snippts when Ctrl-k has been pressed
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" select prediction using tab-key
+imap <expr><TAB> neosnippet#jumpable() ? 
+    \   '<Plug>(neosnippet_expand_or_jump)'
+    \   : pumvisible() ? '<C-n>' : '<TAB>'
+smap <expr><TAB> neosnippet#jumpable() ?
+    \   '<Plug>(neosnippet_expand_or_jump)'
+    \   : '<TAB>'
 '''
 
 [[plugins]]
