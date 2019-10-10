@@ -45,7 +45,7 @@ eval "$(pyenv virtualenv-init -)";
 # create virtualenv for neovim
 for PYTHON_VERSION in 2 3
 do
-    PYTHON_PACKAGE_NAME=$(pyenv install --list | tr -d ' ' | grep -v "dev" | grep ^$PYTHON_VERSION | tail -n 1);
+    PYTHON_PACKAGE_NAME=$(pyenv install --list | tr -d ' ' | grep -v -e "dev" -e "rc" -e "b" | grep ^$PYTHON_VERSION | tail -n 1);
     pyenv install $PYTHON_PACKAGE_NAME;
     pyenv virtualenv $PYTHON_PACKAGE_NAME neovim$PYTHON_VERSION;
     pyenv activate neovim$PYTHON_VERSION;
