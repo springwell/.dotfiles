@@ -70,7 +70,8 @@ alias ga="git add"
 alias gap="git add -p"
 
 # branch
-alias gbr="git branch -a"
+alias gbr="git branch"
+alias gbra="git branch -a"
 alias gbrd='git branch -d'
 
 # commit
