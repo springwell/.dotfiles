@@ -6,9 +6,6 @@ if type nvim >/dev/null 2>&1; then
     alias vim=nvim
 fi
 
-# import common alias
-source $HOME/.dotfiles/alias_rc
-
 # alias to common commands
 alias cl="clear"
 alias sl="ls"

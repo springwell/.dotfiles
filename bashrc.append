@@ -1,10 +1,2 @@
-# set default editor to vim
-EDITOR=vim
-
-# use neovim instead of vim
-if type nvim >/dev/null 2>&1; then
-    alias vim=nvim
-fi
-
 # import common alias
 source $HOME/.dotfiles/alias_rc
